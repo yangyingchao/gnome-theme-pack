@@ -14,6 +14,7 @@ die() {
     exit 1
 }
 
+TOP=${PWD}
 
 if [ -f "gnome-terminal/gnome-terminal-theme.sh" ]; then
     bash gnome-terminal/gnome-terminal-theme.sh
@@ -24,8 +25,11 @@ else
     die "gnome-terminal-theme.sh is missing"
 fi
 
+echo "yes" | emerge -av gnome-shell-extensions-topicons
 
 cd numix-gtk-theme/ && sudo make install
+
+cd ${TOP}
 
 cd extensions
 
