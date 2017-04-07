@@ -25,7 +25,7 @@ else
     die "gnome-terminal-theme.sh is missing"
 fi
 
-echo "yes" | emerge -av gnome-shell-extensions-topicons
+qlist gnome-shell-extensions-topicons-plus | emerge  gnome-shell-extensions-topicons-plus
 
 cd numix-gtk-theme/ && sudo make install
 
